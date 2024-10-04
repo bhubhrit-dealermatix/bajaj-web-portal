@@ -1,61 +1,75 @@
-import type { RefineThemedLayoutV2HeaderProps } from "@refinedev/antd";
-import { useGetIdentity } from "@refinedev/core";
+import React, { useState } from "react";
+import { Layout, Menu, Avatar } from "antd";
+import { Link } from 'react-router-dom';
 import {
-  Layout as AntdLayout,
-  Avatar,
-  Space,
-  Switch,
-  theme,
-  Typography,
-} from "antd";
-import React, { useContext } from "react";
-import { ColorModeContext } from "../../contexts/color-mode";
+  SearchOutlined,
+  UserOutlined,
+  ShoppingCartOutlined,
+} from "@ant-design/icons";
+import type { MenuProps } from "antd";
+import logo from "../../images/DAGLogo.png";
+import "./style.css";
 
-const { Text } = Typography;
-const { useToken } = theme;
+const { Header } = Layout;
 
-type IUser = {
-  id: number;
-  name: string;
-  avatar: string;
-};
+type MenuItem = Required<MenuProps>["items"][number];
 
-export const Header: React.FC<RefineThemedLayoutV2HeaderProps> = ({
-  sticky = true,
-}) => {
-  const { token } = useToken();
-  const { data: user } = useGetIdentity<IUser>();
-  const { mode, setMode } = useContext(ColorModeContext);
+const items: MenuItem[] = [
+  {
+    label: <Link to="/">Home</Link>,
+    key: "home",
+  },
+  {
+    label: <Link to="/products">My Products</Link>,
+    key: "products",
+  },
+  {
+    label: <Link to="/about">About Us</Link>,
+    key: "about",
+  },
+];
 
-  const headerStyles: React.CSSProperties = {
-    backgroundColor: token.colorBgElevated,
-    display: "flex",
-    justifyContent: "flex-end",
-    alignItems: "center",
-    padding: "0px 24px",
-    height: "64px",
+const rightItems = [
+    { key: "search", icon: <SearchOutlined />},
+    { key: "user", icon: <UserOutlined />},
+    { key: "cart", icon: <ShoppingCartOutlined />}
+];
+
+const index: React.FC = () => {
+  const [mainMenu, setMainMenu] = useState("home");
+  const onMenuClick: MenuProps["onClick"] = (e) => {
+    console.log("click ", e);
+    setMainMenu(e.key);
   };
-
-  if (sticky) {
-    headerStyles.position = "sticky";
-    headerStyles.top = 0;
-    headerStyles.zIndex = 1;
-  }
-
+  function onRightMenuClick(event) {
+    switch(event.target.dataset.icon){
+        case "search": console.log(event.target.dataset.icon , "button clicked");break;
+        case "user": console.log(event.target.dataset.icon , "button clicked");break;
+        case "cart": console.log(event.target.dataset.icon , "button clicked");break;
+        default: console.log("default button clicked")
+    }
+  };
   return (
-    <AntdLayout.Header style={headerStyles}>
-      <Space>
-        <Switch
-          checkedChildren="🌛"
-          unCheckedChildren="🔆"
-          onChange={() => setMode(mode === "light" ? "dark" : "light")}
-          defaultChecked={mode === "dark"}
-        />
-        <Space style={{ marginLeft: "8px" }} size="middle">
-          {user?.name && <Text strong>{user.name}</Text>}
-          {user?.avatar && <Avatar src={user?.avatar} alt={user?.name} />}
-        </Space>
-      </Space>
-    </AntdLayout.Header>
+    <Header className="header">
+      <div className="logo">
+        <img src={logo} alt="DAG Logo" />
+      </div>
+      <Menu
+        onClick={onMenuClick}
+        selectedKeys={[mainMenu]}
+        mode="horizontal"
+        items={items}
+        className="navbar-menu"
+      />
+      <div className="right-navbar-menu">
+        {rightItems.map( e => {
+            return (
+                <Avatar key={e.key} size="small" icon={e.icon} onClick={onRightMenuClick}/>
+            )
+        })}
+      </div>
+    </Header>
   );
 };
+
+export default index;

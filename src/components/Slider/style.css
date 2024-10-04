@@ -1,0 +1,28 @@
+button.slick-arrow {
+    background: #d1d1d1 !important;
+    color: #000 !important;
+    padding: 2px !important;
+    border: 1px solid #333 !important;
+    border-radius: 3px !important;
+    display: flex !important;
+    width: 24px !important;
+    height: 24px !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.slick-arrow::after {
+    top: 50% !important;
+    width: 12px;
+    height: 12px;
+}
+
+.slick-next::after {
+    left: 40% !important;
+    transform: translate(-50%, -50%) rotate(135deg) !important;
+}
+
+.slick-prev::after {
+    left: 60% !important;
+    transform: translate(-50%, -50%) rotate(-45deg) !important;
+}

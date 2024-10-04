@@ -1,0 +1,56 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.layout {
+    background-color: #fff;
+}
+
+p {
+    font-size: 13px;
+}
+.offers-orders {
+    column-gap: 4%;
+}
+.offers-orders > div {
+    width: 75%;
+    margin: auto;
+}
+.component-heading {
+    margin-bottom: 10px;
+    font-family: Segoe UI;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 34.58px;
+    text-align: left;
+}
+.text-white {
+    color: #fff;
+}
+.primary-color {
+    color: #006AD0;
+}
+.primary-background {
+    background-color: #006AD0;
+}
+.text-input {
+    font-size: 13px !important;
+    background-color: #f6f6f6 !important;
+    border: none !important;
+    border-radius: 4px !important;
+    height: 38px;
+    padding: 0 15px;
+}
+.primary-button {
+    font-size: 13px !important;
+    border: none !important;
+    border-radius: 4px !important;
+    letter-spacing: 1px;
+    height: 38px !important;
+}
+.text-input::placeholder, .ant-select-selection-search-input::placeholder {
+    height: 100%;
+    color: #000;
+}

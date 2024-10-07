@@ -54,3 +54,7 @@ p {
     height: 100%;
     color: #000;
 }
+.main-container {
+    width: 80%;
+    margin: auto;
+}

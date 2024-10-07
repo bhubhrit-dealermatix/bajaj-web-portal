@@ -2,11 +2,9 @@ import React from 'react';
 import { Layout } from 'antd';
 import FooterLogo from '../../images/footerLogo.png';
 import FooterOverlay from '../../images/footerBg.jpg';
-import './mainFooter.css';
+import './style.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faInstagram, faTwitter, faYoutube, faTelegram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
-
-
 
 const { Footer } = Layout;
 

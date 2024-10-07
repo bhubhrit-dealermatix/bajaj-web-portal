@@ -1,16 +1,10 @@
-import CategoriesList from "../components/CategoriesList/CategoriesList";
+import React from "react";
+import DisplayCards from '../components/displayCards'
 
-const headingStyle = {
-  width: "100%",
-  textAlign: "center" as React.CSSProperties["textAlign"],
-  marginTop: "20px"
-}
-
-const App = () => {
+const App: React.FC = () => {
   return (
     <>
-      <h1 style={headingStyle}>Product Categories</h1>
-      <CategoriesList />
+      <DisplayCards />
     </>
   );
 };

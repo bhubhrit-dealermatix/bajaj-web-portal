@@ -1,6 +1,6 @@
 import React from 'react';
 import { Carousel, Card, Row, Col, Button } from 'antd';
-import './FeaturedProductSlider.css';
+import './style.css';
 import image from '../../images/product_image.png';
 
 interface FeaturedProduct {

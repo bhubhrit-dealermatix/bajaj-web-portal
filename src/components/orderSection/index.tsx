@@ -1,7 +1,7 @@
 import React from 'react';
-import OfferSlider from '../Offerslider/Offerslider';
+import OfferSlider from '../offerSlider/Offerslider';
 import './orderSection.css';
-import RecentOrders from '../RecentOrders/RecentOrders';
+import RecentOrders from '../recentOrders';
 
 const OrderSection: React.FC = () => {
     return (

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { Layout, Menu, Avatar } from "antd";
-import { Link } from 'react-router-dom';
+import { Layout, Menu, Avatar, Button } from "antd";
+import { Link } from "react-router-dom";
 import {
   SearchOutlined,
   UserOutlined,
@@ -20,19 +20,27 @@ const items: MenuItem[] = [
     key: "home",
   },
   {
-    label: <Link to="/products">My Products</Link>,
+    label: <Link to="/products">Products</Link>,
     key: "products",
+  },
+  {
+    label: <Link to="/orders">My Orders</Link>,
+    key: "orders",
   },
   {
     label: <Link to="/about">About Us</Link>,
     key: "about",
   },
+  {
+    label: <Link to="/contact">Contact Us</Link>,
+    key: "contact",
+  },
 ];
 
-const rightItems = [
-    { key: "search", icon: <SearchOutlined />},
-    { key: "user", icon: <UserOutlined />},
-    { key: "cart", icon: <ShoppingCartOutlined />}
+const rightMenuItems = [
+  { key: "search", icon: <SearchOutlined /> },
+  { key: "user", icon: <UserOutlined /> },
+  { key: "cart", icon: <ShoppingCartOutlined /> },
 ];
 
 const index: React.FC = () => {
@@ -42,33 +50,38 @@ const index: React.FC = () => {
     setMainMenu(e.key);
   };
   function onRightMenuClick(event) {
-    switch(event.target.dataset.icon){
-        case "search": console.log(event.target.dataset.icon , "button clicked");break;
-        case "user": console.log(event.target.dataset.icon , "button clicked");break;
-        case "cart": console.log(event.target.dataset.icon , "button clicked");break;
-        default: console.log("default button clicked")
+    switch (event.target.dataset.icon) {
+      case "search":
+        console.log(event.target.dataset.icon, "button clicked");
+        break;
+      case "user":
+        console.log(event.target.dataset.icon, "button clicked");
+        break;
+      case "cart":
+        console.log(event.target.dataset.icon, "button clicked");
+        break;
+      default:
+        console.log("default button clicked");
     }
-  };
+  }
   return (
     <Header className="header">
       <div className="logo">
         <img src={logo} alt="DAG Logo" />
       </div>
-      <Menu
-        onClick={onMenuClick}
-        selectedKeys={[mainMenu]}
-        mode="horizontal"
-        items={items}
-        className="navbar-menu"
-      />
+      <Menu onClick={onMenuClick} selectedKeys={[mainMenu]} mode="horizontal" items={items} className="navbar-menu" />
       <div className="right-navbar-menu">
-        {rightItems.map( e => {
-            return (
-                <Avatar key={e.key} size="small" icon={e.icon} onClick={onRightMenuClick}/>
-            )
+        <Button type="primary" className="primary-background primary-button" style={{ marginRight: "8px", textTransform: "uppercase" }} >
+          Check Authenticity
+        </Button>
+        {rightMenuItems.map((e, i) => {
+          return (
+            <Avatar key={i} size={32} icon={e.icon} onClick={onRightMenuClick}
+            />
+          );
         })}
       </div>
-    </Header>
+    </Header> 
   );
 };
 

@@ -1,7 +1,7 @@
-import Slider from "../components/Slider/index";
-import EnsureAuthenticity from "../components/Authenticity/Authenticity";
-import PartFilter from "../components/PartFilter/PartFilter";
-import FeaturedProductsSlider from "../components/FeaturedProductSlider/FeaturedProductSlider";
+import Slider from "../components/slider/index";
+import EnsureAuthenticity from "../components/authenticity";
+import PartFilter from "../components/partFilter";
+import FeaturedProductsSlider from "../components/featuredProductSlider";
 import MainFooter from "../components/mainFooter";
 import OrderSection from "../components/orderSection";
 

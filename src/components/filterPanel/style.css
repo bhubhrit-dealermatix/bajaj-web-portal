@@ -1,0 +1,54 @@
+.filter-panel .ant-card-head {
+    border: none;
+    padding: 0;
+    min-height: unset;
+    margin-bottom: 8px;
+}
+
+.filter-panel .ant-card-body {
+    border-radius: 0 !important;
+}
+
+.filter-panel .ant-tag-checkable {
+    border: 1px solid #d1d1d1;
+    overflow: hidden;
+}
+
+.filter-panel .ant-tag-checkable:hover {
+    border-color: #006AD0;
+    background-color: transparent;
+    color: #006AD0;
+}
+
+.filter-panel .ant-tag-checkable-checked {
+    border-color: #006AD0;
+    background-color: transparent;
+    color: #006AD0;
+}
+.filter-panel .ant-radio-wrapper, .ant-checkbox-wrapper {
+    width: 100%;
+}
+.filter-panel .ant-radio-wrapper>span:not(.ant-radio),
+.filter-panel .ant-checkbox-wrapper>span:not(.ant-checkbox) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex: 1;
+}
+.filter-panel .ant-radio-wrapper>span:not(.ant-radio)> span:not(.ant-tag) {
+    max-width: 165px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.filter-panel .ant-radio-wrapper>span:not(.ant-radio)> span.ant-tag,
+.filter-panel .ant-checkbox-wrapper>span:not(.ant-checkbox)> span.ant-tag {
+    margin: 0;
+}
+.filter-panel .ant-btn {
+    padding: 0;
+    font-size: 12px;
+    background: #fff;
+    margin: 0;
+    border: none;
+}

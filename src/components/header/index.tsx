@@ -13,6 +13,7 @@ import "./style.css";
 const { Header } = Layout;
 
 type MenuItem = Required<MenuProps>["items"][number];
+type RightMenuItem = Required<MenuProps>["items"][number];
 
 const items: MenuItem[] = [
   {
@@ -37,32 +38,29 @@ const items: MenuItem[] = [
   },
 ];
 
-const rightMenuItems = [
-  { key: "search", icon: <SearchOutlined /> },
-  { key: "user", icon: <UserOutlined /> },
-  { key: "cart", icon: <ShoppingCartOutlined /> },
+const rightMenuItems: RightMenuItem[] = [
+  {
+    label: <Link to="/"><Avatar size={32} icon={<SearchOutlined />}/></Link>,
+    key: "search",
+  },
+  {
+    label: <Link to="/"><Avatar size={32} icon={<UserOutlined />} /></Link>,
+    key: "user",
+  },
+  {
+    label: <Link to="/shopping-cart"><Avatar size={32} icon={<ShoppingCartOutlined />}/></Link>,
+    key: "cart",
+  }
 ];
 
 const index: React.FC = () => {
   const [mainMenu, setMainMenu] = useState("home");
   const onMenuClick: MenuProps["onClick"] = (e) => {
-    console.log("click ", e);
     setMainMenu(e.key);
   };
-  function onRightMenuClick(event) {
-    switch (event.target.dataset.icon) {
-      case "search":
-        console.log(event.target.dataset.icon, "button clicked");
-        break;
-      case "user":
-        console.log(event.target.dataset.icon, "button clicked");
-        break;
-      case "cart":
-        console.log(event.target.dataset.icon, "button clicked");
-        break;
-      default:
-        console.log("default button clicked");
-    }
+  const [rightMenu, setRightMenu] = useState('');
+  const onRightMenuClick: MenuProps['onClick'] = (e) => {
+    setRightMenu(e.key)
   }
   return (
     <Header className="header">
@@ -74,12 +72,7 @@ const index: React.FC = () => {
         <Button type="primary" className="primary-background primary-button" style={{ marginRight: "8px", textTransform: "uppercase" }} >
           Check Authenticity
         </Button>
-        {rightMenuItems.map((e, i) => {
-          return (
-            <Avatar key={i} size={32} icon={e.icon} onClick={onRightMenuClick}
-            />
-          );
-        })}
+        <Menu onClick={onRightMenuClick} selectedKeys={[rightMenu]} mode="horizontal" items={rightMenuItems} />
       </div>
     </Header> 
   );

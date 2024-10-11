@@ -7,6 +7,7 @@
 
 .filter-panel .ant-card-body {
     border-radius: 0 !important;
+    background-color: #fff;
 }
 
 .filter-panel .ant-tag-checkable {
@@ -40,6 +41,9 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+}
+.filter-panel span {
+    font-size: 12px;
 }
 .filter-panel .ant-radio-wrapper>span:not(.ant-radio)> span.ant-tag,
 .filter-panel .ant-checkbox-wrapper>span:not(.ant-checkbox)> span.ant-tag {

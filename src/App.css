@@ -18,6 +18,12 @@ p {
     width: 75%;
     margin: auto;
 }
+.page-heading {
+    margin: 20px 0;
+    font-size: 30px;
+    font-weight: 600;
+    line-height: normal;
+}
 .component-heading {
     margin-bottom: 10px;
     font-family: Segoe UI;

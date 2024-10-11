@@ -29,3 +29,7 @@
     width: 20px;
     margin-right: 8px;
 }
+
+.display-card p {
+    font-size: 12px;
+}

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Flex, Layout, Card, Tag } from "antd";
 import type { RadioChangeEvent } from "antd";
-import { Button, Radio, Space, Checkbox, Col, Row } from "antd";
+import { Button, Radio, Space, Checkbox, Col, Row, Slider } from "antd";
 import type { GetProp } from "antd";
 import "./style.css";
 
@@ -51,38 +51,43 @@ const App: React.FC = () => {
     console.log("You are interested in: ", nextSelectedTags);
     setSelectedTags(nextSelectedTags);
   };
-  const [modelValue, setModelValue] = useState("Boxer Model BM 150cc");
 
+  const [modelValue, setModelValue] = useState("Boxer Model BM 150cc");
   const onModelChange = (e: RadioChangeEvent) => {
     console.log("radio checked", e.target.value);
     setModelValue(e.target.value);
   };
+
   function showMoreModels() {
     const modelsList = document.getElementById("show-models-list");
-    if (
-      modelsList.style.display === "none" ||
-      modelsList.style.display === ""
-    ) {
-      modelsList.style.display = "block";
-    } else {
-      modelsList.style.display = "none";
+    if (modelsList != null ) {
+        if ( modelsList.style.display === "none" || modelsList.style.display === "" ) {
+            modelsList.style.display = "block";
+        } else {
+        modelsList.style.display = "none";
+        }
     }
   }
+
+  const [checked, setChecked] = useState(true);
   const onBrandChange: GetProp<typeof Checkbox.Group, "onChange"> = (
     checkedValues
   ) => {
     console.log("checked = ", checkedValues);
   };
+
   const onFamilyChange: GetProp<typeof Checkbox.Group, "onChange"> = (
     checkedValues
   ) => {
     console.log("checked = ", checkedValues);
   };
+
   const onSegmentChange: GetProp<typeof Checkbox.Group, "onChange"> = (
     checkedValues
   ) => {
     console.log("checked = ", checkedValues);
   };
+
   return (
     <Flex gap="middle" wrap style={{ marginTop: "40px" }}>
       <Layout style={layoutStyle} className="filter-panel">
@@ -99,6 +104,9 @@ const App: React.FC = () => {
                   {tag}
                 </Tag.CheckableTag>
               ))}
+            </Card>
+            <Card size="small" title="Price" className="models-card" style={cardStyle} >
+                <Slider range defaultValue={[340, 1250]} min={200} max={3000}/>
             </Card>
             <Card size="small" title="Models" className="models-card" style={cardStyle} >
               <Radio.Group onChange={onModelChange} value={modelValue}>
@@ -137,7 +145,7 @@ const App: React.FC = () => {
               <Checkbox.Group style={{ width: "100%" }} onChange={onBrandChange} >
                 <Row style={{ rowGap: "8px" }}>
                   <Col span={24}>
-                    <Checkbox value="" checked>
+                    <Checkbox value="" checked={checked}>
                       None <Tag>12</Tag>
                     </Checkbox>
                   </Col>

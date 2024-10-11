@@ -9,6 +9,8 @@ import Product from './pages/Product';
 import Order from './pages/Order';
 import Contact from './pages/Contact';
 import About from './pages/About';
+import Cart from './pages/Cart';
+import Checkout from './pages/Checkout';
 import "./App.css";
 
 
@@ -25,6 +27,8 @@ const App = () => {
               <Route path="/orders" element={<Order />} />
               <Route path="/contact-us" element={<Contact />} />
               <Route path="/about-us" element={<About />} />
+              <Route path="/shopping-cart" element={<Cart />} />
+              <Route path="/checkout" element={<Checkout />} />
             </Routes>
           </Layout.Content>
         </Layout>

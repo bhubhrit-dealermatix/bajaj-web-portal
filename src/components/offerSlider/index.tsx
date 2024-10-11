@@ -1,7 +1,7 @@
 import React from "react";
 import { Carousel } from "antd";
 import Banner1 from '../../images/offerSlide1.png';
-import './Offerslider.css';
+import './style.css';
 
 
 

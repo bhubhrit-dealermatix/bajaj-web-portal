@@ -56,3 +56,6 @@
     margin: 0;
     border: none;
 }
+.filter-panel>.ant-layout>.ant-layout-content {
+    background: #fff;
+}

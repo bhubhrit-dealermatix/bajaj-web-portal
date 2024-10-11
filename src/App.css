@@ -18,14 +18,8 @@ p {
     width: 75%;
     margin: auto;
 }
-.page-heading {
-    margin: 20px 0;
-    font-size: 30px;
-    font-weight: 600;
-    line-height: normal;
-}
 .component-heading {
-    margin-bottom: 10px;
+    margin-bottom: 12px;
     font-family: Segoe UI;
     font-size: 24px;
     font-weight: 700;
@@ -33,7 +27,7 @@ p {
     text-align: left;
 }
 .text-white {
-    color: #fff;
+    color: #fff !important;
 }
 .primary-color {
     color: #006AD0;
@@ -60,7 +54,185 @@ p {
     height: 100%;
     color: #000;
 }
-.main-container {
-    width: 80%;
-    margin: auto;
+.position-relative{
+    position:relative;
+}
+.main-container{
+   width:80%;
+   margin:0 auto;
+}
+.section-spacing_top{
+  padding-top:130px;
+}
+.section-spacing_bottom{
+    padding-bottom:65px;
+  }
+  .section-spacing_topp{
+    padding-top:65px;
+  }
+  .margin-none{
+    margin:0px !important
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent; /* Initial background */
+    padding: 15px 50px;
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    width: 100%;
+  }
+  .header.scrolled {
+    background-color: white; /* Change to white on scroll */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15); /* Box shadow effect */
+    color: black; /* Change text color to black when scrolled */
+  }
+  /* Logo Styles */
+  .logo {
+    width: 28%;
+    height: 100%;
+    display: flex;
+  }
+  .logo-scrolled {
+    filter: invert(1); 
+  }
+  /* Navbar Menu Styles */
+  .navbar-menu {
+    width: 44%;
+    height: 100%;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    line-height: normal;
+    border: none;
+  }
+  .ant-menu-item,
+  .ant-menu-item span {
+    height: inherit;
+    line-height: normal;
+  }
+  .ant-menu-title-content,
+  .ant-menu-item-icon svg {
+    color: #fff; /* Default text color for icons */
+    fill: #fff; /* Default fill for icons */
+    font-size: 13px;
+  }
+  .ant-menu-item-selected:after,
+  .ant-menu-item-active:after {
+    border-bottom-color: #fff !important;
+  }
+  .ant-menu-title-content {
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  /* Menu Item Colors */
+  .navbar-menu .ant-menu-item {
+    color: white; /* Default menu item color */
+  }
+  /* Menu item color when scrolled */
+  .header.scrolled .navbar-menu .ant-menu-item {
+    color: black; /* Menu item color when scrolled */
+  }
+  .header.scrolled .navbar-menu .ant-menu-item>span {
+    color: black; 
+    font-weight:600/* Menu item color when scrolled */
+  }
+  .navbar-menu .ant-menu-item:hover {
+    color: #1c1c1c; /* Change color on hover when scrolled */
+  }
+  /* Right Navbar Menu */
+  .right-navbar-menu {
+    width: 28%;
+    text-align: right;
+  }
+  .ant-avatar {
+    background: transparent;
+  }
+  /* Dropdown Styles */
+  .ant-dropdown {
+    min-width: 380px !important; /* Ensure minimum width */
+  }
+  .custom-dropdown {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 10px;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+  }
+  .dropdown-close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+  }
+  .dropdown-title h3 {
+    font-family: Segoe UI;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 34.58px;
+    text-align: left;
+    color: #006AD0;
+  }
+  .dropdown-title p {
+    font-family: Segoe UI;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+    color: #17183B;
+    margin-top: 10px;
+    max-width: 33ch;
+  }
+  .product-code-box {
+    margin-top: 20px;
+  }
+  /* Input Styles */
+  .custom-input input {
+    height: 38px;
+    background-color: #F9FBFF;
+    border: 1px solid #D8DDE5;
+    font-family: Segoe UI;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18.62px;
+    text-align: left;
+    color: #515151;
+  }
+  .scanner-btn {
+    overflow: hidden;
+    height: 38px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background: #f9fbff;
+  }
+ 
+  .ant-form-item {
+    margin-bottom: 16px;
+  }
+  .dropdown-close .ant-btn {
+    border: none;
+    background: transparent;
+  }
+  /* Icon Styles */
+  .icon-scrolled {
+    color: black; /* Change icon color when scrolled */
+  }
+  .custom-gap{
+    gap: 20px;
+  }
+  .main-container-fluid{
+    width:92%;
+    margin:0 auto;
+}
+.align-right{
+    text-align:right
+}
+.order-section .ant-card .ant-card-body {
+    padding: 0 !important;
+    border-radius: 08px 8px 8px 8px !important;
+    overflow: hidden;
+    background: #F9FBFF;
 }

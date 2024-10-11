@@ -1,0 +1,42 @@
+.video-container {
+    width: 100%; /* Full width */
+    height: 400px; /* Set your desired height for the video */
+    overflow: hidden; /* Hide any overflow if necessary */
+}
+ 
+.video-container video {
+    width: 100%; /* Ensure the video takes up full width */
+    height: 100%; /* Ensure the video fills the container height */
+    object-fit: cover; /* Maintain aspect ratio while covering the area */
+}
+.custom-height {
+    position: relative;
+    height: 0;
+    padding-top: 60%;
+    border-radius: 10px !important;
+    overflow: hidden;
+}
+.custom-height video, .custom-height img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+}
+.custom-play-btn{
+    color: #006AD0;
+    background-color: #fff;
+    font-weight: 700;
+}
+.videoSlider>.ant-carousel>.slick-slider>button.slick-prev {
+    left: -45px;
+    background: #fff !important;
+    border: none !important;
+   
+}
+
+.videoSlider>.ant-carousel>.slick-slider>button.slick-next {
+    right: -45px;
+    background: #fff !important;
+    border: none !important;
+ 
+}

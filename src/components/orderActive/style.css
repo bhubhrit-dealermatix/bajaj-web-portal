@@ -1,0 +1,158 @@
+.renderBox {
+    box-shadow: 0px 8px 32px 0px #676F7B1A;
+    border: 1px solid #DBDBDB;
+    color: #FFFFFF;
+}
+
+.orderActive_steps > .ant-steps-item-icon {
+    width: 24px !important;
+    height: 24px !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    margin: 0px !important;
+}
+
+.orderActive_steps .ant-steps-item-icon >.ant-steps-icon{
+    width: 24px !important;
+    height: 24px !important;
+}
+.orderActive_steps span.ant-steps-icon:after {
+    position: absolute;
+    top: 13px;
+    inset-inline-start: 100%;
+    display: block;
+    width: 9999px;
+    height: 9px;
+    background: rgba(5, 5, 5, 0.06);
+    content: "";
+}
+.orderActive_steps span.ant-steps-icon:before {
+    position: absolute;
+    top: 13px;
+    inset-inline-end: 100%;
+    display: block;
+    width: 9999px;
+    height: 9px;
+    background: rgba(5, 5, 5, 0.06);
+    content: "";
+}
+.ant-steps.orderActive_steps .ant-steps-item-title::after{
+    display: none;
+}
+.orderActive_steps .ant-steps-item {
+    padding-inline-start: 0px !important;
+}
+.ant-steps.orderActive_steps .ant-steps-item-container {
+    outline: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.ant-steps.orderActive_steps .ant-steps-item.ant-steps-item-finish span.ant-steps-icon svg{
+    fill: #28A745;
+}
+.ant-steps.orderActive_steps .ant-steps-item.ant-steps-item-finish  .ant-steps-item-title{
+    font-family: Segoe UI;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 22.61px;
+    text-align: left;
+    color: #28A745;
+}
+.ant-steps.orderActive_steps .ant-steps-item.ant-steps-item-finish span.ant-steps-icon:after{
+    background: #28A745;
+}
+.ant-steps.orderActive_steps .ant-steps-item.ant-steps-item-finish span.ant-steps-icon:before{
+    background: #28A745;
+}
+.ant-steps.orderActive_steps .ant-steps-item.ant-steps-item-process span.ant-steps-icon:before{
+    background: #28A745;
+}
+.ant-steps.orderActive_steps .ant-steps-item.ant-steps-item-process span.ant-steps-icon svg{
+    fill: #28A745;
+}
+.ant-steps.orderActive_steps .ant-steps-item.ant-steps-item-process .ant-steps-item-title{
+    font-family: Segoe UI;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 22.61px;
+    text-align: left;
+    color: #28A745;
+}
+.ant-steps.orderActive_steps .ant-steps-item .ant-steps-item-title{
+    font-family: Segoe UI;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 22.61px;
+    text-align: left;
+    color: #000000;
+}
+.orderActive_steps .ant-steps-item-custom:first-child .ant-steps-item-container {
+    justify-content: start;
+    align-items: start;
+}
+.orderActive_steps .ant-steps-item-custom:last-child .ant-steps-item-container {
+    justify-content: end;
+    align-items: end;
+}
+.orderActive_steps .ant-steps-item-custom:last-child span.ant-steps-icon:after {
+    display: none;
+}
+.custom-flex{
+    justify-content: space-between;
+    align-items: end;
+}
+.order_link{
+    font-family: Segoe UI;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 21.28px;
+    text-align: right;
+    text-decoration: underline !important;
+    color: #17469E;
+}
+.order-title  .ant-typography {
+    font-family: Segoe UI;
+    font-size: 18px;
+    line-height: 26.6px;
+    text-align: left;
+    color: #000000;
+}
+.order-content-detail{
+    display: flex;
+   margin-top: 8px;
+}
+.order-content-detail  .ant-typography {
+    font-family: Segoe UI;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21.28px;
+    text-align: left;
+}
+.order-content-detail .order-info-box:first-child{
+    padding: 0px;
+    margin: 0px;
+}
+.order-content-detail .order-info-box:first-child:before {
+    display: none;
+}
+.order-info-box:before {
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 100%;
+    background: #dddddd;
+    left: 0;
+}
+.order-info-box {
+    position: relative;
+    padding-left: 10px;
+    margin-left: 10px;
+}
+.order-detailFlex{
+    align-items: end;
+}

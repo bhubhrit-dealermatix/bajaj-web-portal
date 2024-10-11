@@ -1,9 +1,17 @@
-import ProductsList from "../components/productsList";
-
-const App = () => {
+import ProductDetail  from '../components/productDetailsSection';
+import ReviewsSection from '../components/reviewSection';
+import SimilarProductsSlider from '../components/similarProducts';
+const ProductDetailSection = () => {
     return (
-      <ProductsList/>
-    );
-  };
-
-  export default App;
+      <>
+<div className="main-container-fluid section-spacing_top section-spacing_bottom">
+<ProductDetail />
+<SimilarProductsSlider />
+<ReviewsSection />
+ 
+</div>
+</>
+ );
+};
+   
+export default ProductDetailSection;

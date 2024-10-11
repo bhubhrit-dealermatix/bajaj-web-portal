@@ -28,7 +28,7 @@ const App: React.FC = () => {
     };
   }, []);
   return (
-    <Flex wrap gap={rowGap} align="stretch" style={{marginTop: "40px"}} className="display-card">
+    <Flex wrap gap={rowGap} align="stretch" className="display-card">
       <Card
         size="small"
         title={

@@ -11,7 +11,10 @@ import Contact from './pages/Contact';
 import About from './pages/About';
 import Cart from './pages/Cart';
 import Checkout from './pages/Checkout';
+import MainFooter from "./components/footer";
 import "./App.css";
+import ProductDetailPage from './pages/Product-details';
+import OrderHistory from "./components/orderHistory";
 
 
 const App = () => {
@@ -24,13 +27,15 @@ const App = () => {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/products" element={<Product />} />
-              <Route path="/orders" element={<Order />} />
+              <Route path="/product/:itemId" element={<ProductDetailPage />} />
+              <Route path="/orders" element={<OrderHistory />} />
               <Route path="/contact-us" element={<Contact />} />
               <Route path="/about-us" element={<About />} />
               <Route path="/shopping-cart" element={<Cart />} />
               <Route path="/checkout" element={<Checkout />} />
             </Routes>
           </Layout.Content>
+          <MainFooter/>
         </Layout>
       </Refine>
     </BrowserRouter>

@@ -1,0 +1,46 @@
+.slick-arrow{
+    color:#333 !important;
+    }
+    .feature-wrapper{
+        margin: 40px 0 40px 0;
+    }
+    .feature-wrapper .ant-card .ant-card-body {
+        padding: 10px !important;
+    }
+    .quantity-box {
+        border: 1px solid #006AD0;
+        border-radius: 4px;
+    }
+    .quantity-box .ant-btn {
+        font-size: 18px !important;
+        line-height: 1.5714285714285714;
+        height: 28px !important;
+        padding: 4px 12px !important;
+        border-radius: 6px;
+        border: none !important;
+        box-shadow: none !important;
+        color: #006AD0;
+    
+    }
+    .product-image {
+        height: 160px;
+        object-fit: cover;
+    }
+    .in-stock {
+        color: green;
+    }
+    .out-of-stock {
+        color: red;
+    }
+    .slider-header button {
+        color: white;
+    }
+    .featuredslider>.ant-carousel>.slick-slider>button.slick-prev {
+        left: -45px;
+        
+    }
+    
+    .featuredslider>.ant-carousel>.slick-slider>button.slick-next {
+        right: -45px;
+     
+    }

@@ -1,3 +1,35 @@
-.ant-card-head {
-    padding: 0 !important;
+.display-card .ant-card {
+  background: #eef4fa;
+}
+
+.display-card .ant-card-head {
+  padding: 0 !important;
+  border: none;
+  min-height: unset !important;
+  margin-bottom: 8px !important;
+}
+
+.display-card .ant-avatar {
+  width: auto;
+  height: unset;
+}
+
+.display-card .ant-avatar svg {
+  fill: #006ad0;
+}
+
+.display-card .ant-card-head-title > span {
+  display: flex;
+  align-items: center;
+  font-size: 17px;
+}
+
+.display-card .ant-card-head-title > span svg,
+.display-card .ant-card-head-title > span img {
+    width: 20px;
+    margin-right: 8px;
+}
+
+.display-card p {
+    font-size: 12px;
 }

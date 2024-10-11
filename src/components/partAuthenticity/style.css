@@ -1,0 +1,12 @@
+.custom-input{
+    margin: 0px !important;
+}
+.validate-font{
+    font-size: 13px;
+    margin-left: 10px;
+    min-height: 43px !important;
+}
+.ant-form-inline.custom-form {
+    display: flex;
+    flex-wrap: nowrap;
+}

@@ -1,0 +1,11 @@
+.product-section{
+    border:1px solid #e4e4e4;
+    padding:20px;
+}
+.main-productdetail>.ant-carousel >.slick-list{
+width:90%;
+margin:0 auto;
+}
+.main-productdetail{
+    text-align: center;
+}

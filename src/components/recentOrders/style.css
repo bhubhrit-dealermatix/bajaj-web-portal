@@ -14,11 +14,74 @@ label {
 label + p {
     font-size: 16px;
 }
-.ant-card .ant-card-body {
+.custom-steps .ant-card .ant-card-body {
     padding: 0 !important;
     border-radius: 08px 8px 8px 8px !important;
     overflow: hidden;
+    background: #F9FBFF;
 }
 .primary-bg {
     background: #006AD0;
+}   
+.text-white {
+    color: #fff !important;
+    margin: 0px !important;
+}
+.order-detail {
+    padding: 20px;
+}
+.noGap{
+    gap: 0px !important ;
+}
+.order-status {
+    padding: 20px;
+    border-top: 1px dashed;
+}
+.custom-steps{
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+.custom-steps .ant-steps-item:last-child {
+    flex: 1 ;
+}
+.custom-steps .ant-steps .ant-steps-item-tail{
+    top: 14px;
+    margin-inline-start: 50px !important;
+    padding: 0 0px !important;
+}
+.custom-steps.ant-steps .ant-steps-item-tail::after {
+    height: 6px;
+}
+.custom-steps span.ant-steps-icon{
+    background: #9d9d9d ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%
+}
+.custom-steps .ant-steps-item.ant-steps-item-process span.ant-steps-icon{
+    background-color: #006AD0;
+}
+.custom-steps .ant-steps-item.ant-steps-item-finish span.ant-steps-icon{
+    background-color: #006AD0;
+}
+.ant-steps.custom-steps .ant-steps-item-process>.ant-steps-item-container>.ant-steps-item-tail::after {
+    background-color: #9d9d9d;
+}
+
+.custom-steps.ant-steps .ant-steps-item-title {
+    color: rgba(0, 0, 0, 0.88);
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 600;
+}
+.custom-steps .ant-steps-item-description {
+    font-size: 12px;
+    color: #696974 !important;
+}
+.custom-steps.ant-steps .ant-steps-item-tail {
+    top: 14px;
+    margin-inline-start: 50px;
+    padding: 0 0px !important;
 }

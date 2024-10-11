@@ -1,0 +1,68 @@
+
+.star-filled>.anticon-star {
+    color:  rgb(250, 173, 20) !important;
+}
+.rating-custom{
+    text-align: center;
+    background: #F5F7FA;
+    padding: 26px;
+    border-radius: 8px;
+}
+.rating-margin_top{
+    margin-bottom:6px !important;
+}
+.rating-star{
+    font-size:14px !important;
+    margin-bottom:7px !important;
+    color:  rgb(250, 173, 20) !important;
+}
+.rating-left_margin {
+    margin-left: 24px;
+}
+.count-margin{
+    margin-left:16px;
+}
+.align-item_bottom{
+margin-bottom: 5px;
+}
+.background-default{
+    background: #F5F7FA !important;
+}
+.review-font{
+    font-weight: 600;
+}
+.items-section{
+    margin-top:9px;
+}
+.date-section{
+    font-weight:500;
+    text-align: right;
+}
+.main-rating>.ant-list-item-meta>.ant-list-item-meta-content>h4 {
+    margin-bottom: 7px !important;
+}
+.review{
+    margin-bottom:7px;
+}
+.align-right>button {
+    padding: 0px 5px;
+    border-radius: 0px !important;
+}
+.button-link{
+    padding-left:0px;
+    border:0px !important;
+    box-shadow: none !important;
+}
+.all-section>button{
+    color: #013564;
+    padding-left:0px;
+    text-decoration:underline;
+
+}
+.all-section {
+    border-top: 1px solid #e4e4e4;
+    padding-top: 12px;
+}
+.main-rating>div {
+    margin-bottom: 4px !important;
+}

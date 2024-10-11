@@ -1,0 +1,50 @@
+.orderHistory_wrapper{
+    margin-top: 100px;
+    margin-bottom: 60px;
+}
+.filterBox {
+    border: 1px solid #DBDBDB;
+    background: #F9FBFF;
+    border-radius: 8px;
+    overflow: hidden;
+}
+.filter-title-box , .filter-list{
+    padding: 14px 8px !important;
+    justify-content: start !important;
+    border: none !important;  
+}
+.filter-title-box{
+    gap:16px;
+}
+.filter-custom-icon svg {
+    font-size: 22px;
+    color: #000000;
+}
+.filter-title {
+    margin: 0 !important;
+    font-family: Segoe UI;
+    font-size: 18px !important;
+    font-weight: 600;
+    line-height: 23.94px;
+    text-align: left;
+}
+li.ant-list-item.filter-list.active-filter {
+    background: #006ad0;
+}
+.active-filter .filter-custom-icon svg{
+    color: #fff;
+}
+span.filter-text.active-filter-text{
+    color: #fff;
+}
+span.filter-text {
+    font-family: Segoe UI;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 23.94px;
+    text-align: left;
+    color: #000;
+}
+.custom-divider {
+        border-top: 1px dashed rgba(5, 5, 5, 0.06) !important;
+}

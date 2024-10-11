@@ -1,0 +1,27 @@
+.rating-title{
+    font-family: Segoe UI;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 18.62px;
+    text-align: right;
+    color: #000;
+}
+.rating ul.ant-rate {
+    display: flex;
+    justify-content: end;
+    margin-top: 4px;
+}
+.rating {
+    display: flex;
+    align-items: center;
+    justify-content: end !important;
+    margin-top: 5px;
+}
+
+.order-box.Order_status_box {
+    padding: 20px;
+    margin-bottom: 30px;
+    border: 1px solid #DBDBDB;
+    box-shadow: 0px 8px 32px -4px #676F7B1A;
+    border-radius: 10px;
+}

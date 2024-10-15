@@ -228,3 +228,6 @@ p {
     overflow: hidden;
     background: #F9FBFF;
 }
+.primary-button.primary-background:hover {
+  background: #4096ff !important;
+}

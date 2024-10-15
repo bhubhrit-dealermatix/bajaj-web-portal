@@ -142,7 +142,7 @@ const SimilarProductsSlider: React.FC = () => {
                 <div style={{ position: 'relative'}}>
                     <div className="slider-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
                         <div>
-                            <h2 className='component-heading primary-color'>Similar Products</h2>
+                            <h2 className='component-heading'>Similar Products</h2>
                         </div>
                     </div>
                 </div>

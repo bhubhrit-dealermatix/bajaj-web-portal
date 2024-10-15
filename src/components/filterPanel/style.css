@@ -4,7 +4,9 @@
     min-height: unset;
     margin-bottom: 8px;
 }
-
+.padding-custom{
+    padding-left: 40px;
+}
 .filter-panel .ant-card-body {
     border-radius: 0 !important;
     background-color: #fff;

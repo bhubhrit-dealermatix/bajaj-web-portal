@@ -9,3 +9,149 @@ margin:0 auto;
 .main-productdetail{
     text-align: center;
 }
+.productrating_box {
+    display: flex;
+    gap: 10px;
+    align-items: start;
+    margin-bottom: 10px;
+}   
+ul.ant-rate.custom-rate svg {
+    width: 14px !important;
+    height: 14px !important;
+}
+ul.ant-rate.custom-rate {
+    margin-top: -5px;
+}
+.productrating_text , .productrating_count {
+    font-family: Segoe UI;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 24px;
+    text-align: left;
+    letter-spacing: 4px;
+}
+.productrating_count{
+    letter-spacing: 0px;
+    color: #A2A3B1;
+}
+.productDetail_box{
+    margin-left: 45px;
+}
+.productTitle {
+    color: #17183B !important;
+    margin: 0px !important;
+}
+.productDescription{
+    font-family: Segoe UI;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+    color: #17183B;
+    max-width: 54ch;
+    display: block;
+}
+.productMRP:before {
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 60%;
+    background: #495057;
+    right: 0;
+    bottom: 0;
+    top: 11px;
+}
+.product-flex .productMRP:last-child:before {
+    display: none;
+}
+.productprice_info {
+    align-items: center;
+    gap: 10px;   
+    margin-top: 24px;
+}
+.productMRP .price {
+    font-family: Segoe UI;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 23.94px;
+    text-align: left;
+    color: #003464;
+}
+.recentPrice {
+    font-family: Segoe UI;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26.6px;
+    text-align: left;
+    color: #6A6A6A;
+}
+.currentPrice {
+    color: #006AD0 !important;
+    margin: 0px !important;
+}
+.custombadge {
+    background: #DF2121;
+    padding: 2px 6px;
+    font-family: Segoe UI;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 18.62px;
+    text-align: left;
+    color: #FFFFFF;
+    border-radius: 2px;
+}
+.cart_box{
+    margin-top: 10px;
+}
+.cart_btn{
+    width: 100%;
+}
+.quantity-text{
+    margin: 0 10px;
+    min-width: 20px !important;
+    display: block;
+    text-align: center;
+}
+.productMRP {
+    position: relative;
+    margin-right: 20px;
+    padding-right: 20px;
+}
+.product-flex {
+    display: flex;
+}
+.thumbnail_Slider{
+    width: 100%;
+    padding: 0 60px;
+    margin-top: 20px;
+}
+.thumbnail_Slider .slick-slide.slick-active.slick-current .thumbnail-img{
+    border: 2px solid #006AD0 !important;
+}
+.thumbnail-img {
+    width: 95px !important;
+    height: 95px !important;
+    padding: 5px;
+    border: 1px solid #E4E7E9;
+    border-radius: 2px;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    transition: 0.4s ease all !important;
+}
+.thumbnail-img img{
+    width:100%;
+    height: 100%;
+}
+.main-productdetail button.slick-arrow {
+    border-radius: 50% !important;
+    width: 35px !important;
+    height: 35px !important;
+    background: #006AD0 !important;
+    opacity: 1 !important;
+    color: #fff !important;
+    border-color: #006AD0 !important;
+}
+.productPage_Title {
+    margin-bottom: 24px !important;
+}

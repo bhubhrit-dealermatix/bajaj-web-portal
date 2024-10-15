@@ -370,7 +370,7 @@ const ShoppingCart: React.FC = () => {
         ""
       )}
       <Row gutter={24} style={{ marginTop: "20px" }}>
-        <Col span={16}>
+        <Col span={16} style={{paddingLeft: "0"}}>
           {pageName === "shopping-cart" ? (
             <Table
               columns={columns}
@@ -396,7 +396,7 @@ const ShoppingCart: React.FC = () => {
             />
           )}
         </Col>
-        <Col span={8}>
+        <Col span={8} style={{paddingRight: "0"}}>
           <OrderSummary
             totalItems={totalItems}
             subtotal={subtotal}

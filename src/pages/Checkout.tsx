@@ -3,7 +3,7 @@ import Cart from "../components/shoppingCart/shoppingCart";
 
 const App: React.FC = () => {
   return (
-    <div className="main-container">
+    <div className="main-container-fluid section-spacing_top section-spacing_bottom extra-top">
       <Cart/>
     </div>
   );

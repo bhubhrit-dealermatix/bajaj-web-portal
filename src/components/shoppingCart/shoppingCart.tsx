@@ -1,11 +1,33 @@
-import React, { useState } from "react";
-import { Table, Button, Card, Row, Col, Typography, Avatar } from "antd";
-import { MinusOutlined, PlusOutlined, CloseOutlined } from "@ant-design/icons";
+import React, { useState, useEffect } from "react";
+import {
+  Table,
+  Button,
+  Card,
+  Row,
+  Col,
+  Typography,
+  Avatar,
+  Input,
+  Checkbox,
+} from "antd";
+import { Dropdown, Space } from "antd";
+import {
+  MinusOutlined,
+  PlusOutlined,
+  CloseOutlined,
+  DownOutlined,
+} from "@ant-design/icons";
 import { Rate } from "antd";
 import OrderSummary from "../orderSummaryCard/orderSummaryCard";
 import { useLocation } from "react-router-dom";
 import { Tabs } from "antd";
 import "./style.css";
+import hdfc from "../../images/hdfc.png";
+import sbi from "../../images/sbi.png";
+import payzapp from "../../images/payzApp-logo.png";
+import olamoney from "../../images/olamoney-logo.png";
+import mobikwik from "../../images/mobikwik-logo.png";
+import type { CheckboxProps, MenuProps } from "antd";
 
 const cashSVG = (
   <svg
@@ -118,6 +140,21 @@ const walletSVG = (
   </svg>
 );
 
+const items: MenuProps["items"] = [
+  {
+    label: "@okaxis",
+    key: "@okaxis",
+  },
+  {
+    label: "@okhdfc",
+    key: "@okhdfc",
+  },
+  {
+    label: "@oksbi",
+    key: "@oksbi",
+  },
+];
+
 const { Title, Text } = Typography;
 interface CartItem {
   key: string;
@@ -223,11 +260,11 @@ const ShoppingCart: React.FC = () => {
           style={{
             display: "flex",
             alignItems: "center",
-            width: "120px",
-            height: "45px",
+            width: "110px",
+            height: "38px",
             textAlign: "center",
             padding: "0",
-            border: "1px solid #2680f5",
+            border: "1px solid #006ad0",
           }}
         >
           <Button
@@ -238,9 +275,9 @@ const ShoppingCart: React.FC = () => {
             style={{
               marginRight: "5px",
               fontSize: "10px",
-              color: "White",
-              height: "29px",
-              background: "#2680f5",
+              color: "#fff",
+              height: "30px",
+              background: "#006ad0",
             }}
           />
           <Text style={{ margin: "0", fontSize: "15px", lineHeight: "24px" }}>
@@ -252,9 +289,9 @@ const ShoppingCart: React.FC = () => {
             style={{
               marginLeft: "5px",
               fontSize: "8px",
-              color: "White",
-              height: "29px",
-              background: "#2680f5",
+              color: "#fff",
+              height: "30px",
+              background: "#006ad0",
             }}
           />
         </Card>
@@ -322,6 +359,23 @@ const ShoppingCart: React.FC = () => {
   const location = useLocation();
   const pageName = location.pathname.split("/").pop();
 
+  const setDefaultBank: CheckboxProps["onChange"] = (e) => {
+    console.log(`checked = ${e.target.checked}`);
+  };
+
+  const [tabPosition, setTabPosition] = useState('left');
+
+  useEffect(() => {
+    const handleResize = () => {
+      setTabPosition(window.innerWidth <= 994 ? "top" : "left");
+      console.log(tabPosition, "tabPosition");
+      
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   const tabsMenu = [
     {
       label: (
@@ -332,32 +386,183 @@ const ShoppingCart: React.FC = () => {
       content: "",
       disabled: true,
     },
-    { 
-      label: (
-        <div>{cashSVG} Pay By Cash</div>
-      ),
+    {
+      label: <div>{cashSVG} Net Banking</div>,
       content: (
-        <div style={{border:"1px dashed #DA291C", padding: "16px 20px", borderRadius: "5px", font: "500 16px sans-serif", color:"#DA291C"}}>
-          <Avatar icon={<PlusOutlined/>} size={"small"}/>
-          Add Other UPI Apps
-        </div>
-      ) 
+        <Card
+          style={{
+            border: "1px solid #DFDFDF",
+          }}
+        >
+          <Input
+            placeholder="Search Banks"
+            style={{
+              borderColor: "#DFDFDF",
+              padding: "8px 12px",
+              marginBottom: "1rem",
+            }}
+          />
+          <h3>Frequently Used Banks</h3>
+          <div
+            style={{
+              padding: "12px",
+              border: "1px solid #dfdfdf",
+              borderRadius: "6px",
+              marginTop: "0.75rem",
+              display: "flex",
+              alignItems: "center",
+            }}
+          >
+            <img src={hdfc} width={"40px"} style={{ marginRight: "0.5rem" }} />
+            <Text style={{ fontSize: "16px", fontWeight: "600" }}>HDFC</Text>
+          </div>
+          <div
+            style={{
+              padding: "12px",
+              border: "1px solid #dfdfdf",
+              borderRadius: "6px",
+              marginTop: "0.75rem",
+              display: "flex",
+              alignItems: "center",
+            }}
+          >
+            <img src={sbi} width={"40px"} style={{ marginRight: "0.5rem" }} />
+            <Text style={{ fontSize: "16px", fontWeight: "600" }}>
+              State Bank Of India
+            </Text>
+            <Checkbox
+              onChange={setDefaultBank}
+              style={{ float: "right", width: "auto", margin: "0 0 0 auto" }}
+            >
+              Mark as Default
+            </Checkbox>
+          </div>
+        </Card>
+      ),
     },
-    { label: <div>{upiSVG} UPI Payment</div>, content: "Hello content2" },
+    {
+      label: <div>{upiSVG} UPI Payment</div>,
+      content: (
+        <Card
+          style={{
+            border: "1px solid #DFDFDF",
+          }}
+        >
+          <h3>UPI ID</h3>
+          <div
+            style={{
+              borderBottom: "1px solid #dfdfdf",
+              display: "flex",
+              alignItems: "center",
+              margin: "1rem 0 0.5rem",
+            }}
+          >
+            <Input
+              placeholder="Username"
+              size="large"
+              style={{
+                border: "none",
+                borderRadius: "unset",
+                flex: "1",
+              }}
+            />
+            <Dropdown menu={{ items }} trigger={["click"]}>
+              <a onClick={(e) => e.preventDefault()} style={{ color: "#000" }}>
+                <Space>
+                  Select Bank
+                  <DownOutlined />
+                </Space>
+              </a>
+            </Dropdown>
+          </div>
+          <p style={{ fontSize: "15px" }}>
+            A payment request will be forwarded to this UPI ID
+          </p>
+          <Checkbox
+            onChange={setDefaultBank}
+            style={{ width: "auto", marginTop: "1rem", color: "#999" }}
+          >
+            Save this UPI ID for faster payments
+          </Checkbox>
+        </Card>
+      ),
+    },
     {
       label: <div>{walletSVG} Pay From Wallet</div>,
-      content: "Hello content3",
+      content: (
+        <Card style={{ border: "1px solid #dfdfdf" }}>
+          <h3>Wallet</h3>
+          <div
+            style={{
+              padding: "12px",
+              border: "1px solid #dfdfdf",
+              borderRadius: "6px",
+              marginTop: "0.75rem",
+              display: "flex",
+              alignItems: "center",
+            }}
+          >
+            <img
+              src={payzapp}
+              width={"40px"}
+              style={{ marginRight: "0.5rem" }}
+            />
+            <Text style={{ fontSize: "16px", fontWeight: "600" }}>PayZapp</Text>
+          </div>
+          <div
+            style={{
+              padding: "12px",
+              border: "1px solid #dfdfdf",
+              borderRadius: "6px",
+              marginTop: "0.75rem",
+              display: "flex",
+              alignItems: "center",
+            }}
+          >
+            <img
+              src={olamoney}
+              width={"40px"}
+              style={{ marginRight: "0.5rem" }}
+            />
+            <Text style={{ fontSize: "16px", fontWeight: "600" }}>
+              Ola Money
+            </Text>
+          </div>
+          <div
+            style={{
+              padding: "12px",
+              border: "1px solid #dfdfdf",
+              borderRadius: "6px",
+              marginTop: "0.75rem",
+              display: "flex",
+              alignItems: "center",
+            }}
+          >
+            <img
+              src={mobikwik}
+              width={"40px"}
+              style={{ marginRight: "0.5rem" }}
+            />
+            <Text style={{ fontSize: "16px", fontWeight: "600" }}>
+              MobiKwik
+            </Text>
+          </div>
+        </Card>
+      ),
     },
-    { label: <div>{walletSVG} Pay Later</div>, content: "Hello content4" },
     {
-      label: <div>Other</div>,
+      label: <div>{walletSVG} Credit / Debit Card</div>,
+      content: "Hello content4",
+    },
+    {
+      label: <div>{walletSVG} Cash On Delivery</div>,
       content: "",
     },
   ];
 
   return (
     <div
-      className={pageName === "shopping-cart" ? "shopping Cart" : "checkout"}
+      className={pageName === "shopping-cart" ? "shopping-cart" : "checkout"}
     >
       <Title level={2} className="page-heading">
         {pageName === "shopping-cart" ? "Shopping Cart" : "Checkout"}
@@ -369,8 +574,12 @@ const ShoppingCart: React.FC = () => {
       ) : (
         ""
       )}
-      <Row gutter={24} style={{ marginTop: "20px" }}>
-        <Col span={16} style={{paddingLeft: "0"}}>
+      <Row gutter={{ xs: 8, sm: 16, lg: 24 }} style={{ marginTop: "20px" }}>
+        <Col
+          xs={{ flex: "100%" }}
+          lg={{ flex: "calc(200%/3)" }}
+          className="padding-left-0 padding-0"
+        >
           {pageName === "shopping-cart" ? (
             <Table
               columns={columns}
@@ -382,7 +591,7 @@ const ShoppingCart: React.FC = () => {
           ) : (
             <Tabs
               defaultActiveKey="1"
-              tabPosition="left"
+              tabPosition={tabPosition}
               style={{ height: "auto" }}
               items={tabsMenu.map((e, i) => {
                 const id = String(i);
@@ -396,7 +605,11 @@ const ShoppingCart: React.FC = () => {
             />
           )}
         </Col>
-        <Col span={8} style={{paddingRight: "0"}}>
+        <Col
+          xs={{ flex: "100%" }}
+          lg={{ flex: "calc(100%/3)" }}
+          className="padding-right-0 padding-0"
+        >
           <OrderSummary
             totalItems={totalItems}
             subtotal={subtotal}

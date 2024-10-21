@@ -50,6 +50,15 @@ p {
     letter-spacing: 1px;
     height: 38px !important;
 }
+.primary-button.primary-background:hover {
+  background: #4096ff !important;
+}
+.primary-button.primary-background[disabled]:hover {
+  background: #C7DEF6 !important;
+}
+.primary-button.primary-background[disabled] {
+  background: #C7DEF6 !important;
+}
 .text-input::placeholder, .ant-select-selection-search-input::placeholder {
     height: 100%;
     color: #000;
@@ -227,7 +236,4 @@ p {
     border-radius: 08px 8px 8px 8px !important;
     overflow: hidden;
     background: #F9FBFF;
-}
-.primary-button.primary-background:hover {
-  background: #4096ff !important;
 }

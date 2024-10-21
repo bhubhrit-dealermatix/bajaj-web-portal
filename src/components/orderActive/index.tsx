@@ -14,7 +14,7 @@
     };
 
     const OrderActive: React.FC = () => {
-        const OrderInfo = ({ order }) => (
+        const OrderInfo = ({ order}) => (
 
             <div className='order-box'>
                 <Row >

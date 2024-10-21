@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Table, Button, Card, Row, Col, Typography, Avatar } from "antd";
+import { Table, Button, Card, Row, Col, Typography, Avatar  } from "antd";
 import { MinusOutlined, PlusOutlined, CloseOutlined } from "@ant-design/icons";
 import { Rate } from "antd";
 import OrderSummary from "../orderSummaryCard/orderSummaryCard";
@@ -326,12 +326,24 @@ const ShoppingCart: React.FC = () => {
     {
       label: (
         <Text style={{ fontSize: "18px", fontWeight: "600" }}>
-          Select Method
+          Select Payment Method
         </Text>
       ),
       content: "",
       disabled: true,
     },
+
+    { label: (<div>{upiSVG} UPI Payment</div>) , 
+    content: (
+      <div className="UPI_box">
+         <Row>
+            <Col>
+              <div className="upiImage"><img src=""></img></div>
+            </Col>
+            <Col></Col>
+         </Row>
+      </div>
+    )},
     { 
       label: (
         <div>{cashSVG} Pay By Cash</div>
@@ -343,7 +355,6 @@ const ShoppingCart: React.FC = () => {
         </div>
       ) 
     },
-    { label: <div>{upiSVG} UPI Payment</div>, content: "Hello content2" },
     {
       label: <div>{walletSVG} Pay From Wallet</div>,
       content: "Hello content3",

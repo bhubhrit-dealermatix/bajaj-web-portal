@@ -48,3 +48,68 @@ span.filter-text {
 .custom-divider {
         border-top: 1px dashed rgba(5, 5, 5, 0.06) !important;
 }
+.customTabs .ant-tabs-nav-list {
+    flex-direction: column;
+    width: 100%;
+    margin-left: 30px;
+    background-color: #F9FBFF;
+    border-radius: 5px;
+}
+.customTabs .ant-tabs-nav-list .ant-tabs-tab{
+    margin: 0px;
+}
+.customTabs .ant-tabs-nav:before {
+    display: none;
+}
+.customTabs .ant-tabs-nav-list .ant-tabs-tab {
+    padding: 0px 0px;
+    color: #000000;
+    font-family: Segoe UI;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 23.94px;
+    text-align: left;
+    position: relative;
+}
+.customTabs .ant-tabs-nav-list .ant-tabs-tab:nth-last-child(2) .ant-tabs-tab-btn{
+  border-bottom: 0px !important;
+}
+.customTabs .ant-tabs-ink-bar.ant-tabs-ink-bar-animated{
+    display: none;
+}
+.customTabs .ant-tabs-nav-list .ant-tabs-tab .ant-tabs-tab-btn{
+    margin: 0 20px;
+    padding: 20px 0px;
+    border-bottom: 1px solid #C5D5E4;
+    width: 100%;
+}
+.customTabs .ant-tabs-tab.ant-tabs-tab-active {
+    background: #006AD0;
+}
+
+.customTabs .ant-tabs-nav-list .ant-tabs-tab:before {
+    content: "";
+    position: absolute;
+    width: 4px;
+    height: 100%;
+    left: 0;
+    background: #f9fbff;
+    transition: 0.4s ease all;
+}
+.customTabs .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+    color: #fff;
+}
+.customTabs .ant-tabs-tab .ant-tabs-tab-btn span{
+    display: flex;
+    align-items: center;
+}
+.customTabs .ant-tabs-tab .ant-tabs-tab-btn .anticon{
+    margin-right: 6px;
+}
+.customTabs .ant-tabs-tab .ant-tabs-tab-btn .anticon svg{
+    width: 20px;
+    height: 20px;
+}
+.customTabs .ant-tabs-nav-list .ant-tabs-tab.ant-tabs-tab-active:before{
+    background-color: #003464;
+}

@@ -82,8 +82,8 @@
 .header.scrolled img{
   filter: invert(1)
 }
-.header.scrolled .custom-icon{
-  color: black;
+.header.scrolled .custom-icon svg path {
+  fill: #000;
 }
 .header .ant-dropdown {
   min-width: 380px !important;

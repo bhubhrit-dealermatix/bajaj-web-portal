@@ -1,13 +1,23 @@
 .contact-container {
-    background-color: #f5f5f5;
-    padding: 20px;
+    background-position: right center;
+    background-repeat: no-repeat;
+    background-size: cover;
     height: 100vh;
-  }
-  
-  .full-height {
+    position: relative;
+}
+.contact-container:before{
+    content: "";
+    position: absolute;
+    width: 50%;
     height: 100%;
-  }
-  
+    right: 0;
+    top: 0;
+    background: linear-gradient(270deg, #202430 0%, rgba(31, 35, 46, 0.97) 32.58%, rgba(28, 32, 43, 0) 100%);
+
+}
+.full-height {
+    height: 100%;
+} 
   .bike-image-container {
     display: flex;
     justify-content: center;
@@ -18,14 +28,16 @@
     max-width: 100%;
     height: auto;
   }
-  
   .contact-card {
-    padding: 20px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
     background: white;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    width: 100%;
+    background-size: cover;
   }
-  
   .contact-form .ant-form-item {
     margin-bottom: 15px;
   }
@@ -39,4 +51,17 @@
     background-color: #40a9ff;
     border-color: #40a9ff;
   }
-  
+  .custom-text {
+    color: #006AD0 !important;
+    font-weight: 700 !important;
+    margin-bottom: 5px !important;
+}    
+
+.contact-form{
+    margin-top: 20px;
+}
+.contact-form .custom-form-field, .contact-form .custom-form-field .ant-select-selector{
+    border-color: #D8DDE5;
+    background: #F9FBFF;
+    height: 40px;
+}

@@ -64,7 +64,42 @@
 .checkout .ant-avatar svg {
     fill: #000
 }
+.shopping-cart .ant-table-content .ant-card .ant-card-body {
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.ant-dropdown-menu {
+    width: max-content;
+}
 
-.shopping.Cart, .checkout {
-    padding: 5rem 0 3rem;
+.padding-right-0 {
+    padding-right: 0 !important;
+}
+.padding-left-0 {
+    padding-left: 0 !important;
+}
+
+@media (width <= 994px) {
+    .padding-0 {
+        padding: 0 0 1.5rem !important;
+    }
+    .checkout .ant-tabs-nav {
+        width: 100%;
+    }
+    .checkout .ant-tabs-tab {
+        padding: 0 12px !important;
+        margin: 0 !important;
+        border-left: 4px solid transparent;
+        border-right: 1px solid #dfdfdf;
+    }
+    .checkout .ant-tabs-tab.ant-tabs-tab-disabled {
+        padding: 0 12px !important;
+        margin: 0 !important;
+    }
+    .checkout .ant-tabs-tab .ant-tabs-tab-btn {
+        border-bottom: none;
+    }
 }

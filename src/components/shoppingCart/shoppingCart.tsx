@@ -19,6 +19,7 @@ import {
 } from "@ant-design/icons";
 import { Rate } from "antd";
 import OrderSummary from "../orderSummaryCard/orderSummaryCard";
+import DeliveryOptions from "../../components/deliveryOptions/index";
 import { useLocation } from "react-router-dom";
 import { Tabs } from "antd";
 import "./style.css";
@@ -552,8 +553,57 @@ const ShoppingCart: React.FC = () => {
     },
     {
       label: <div>{walletSVG} Credit / Debit Card</div>,
-      content: "Hello content4",
-    },
+      content: (
+        <Card
+          style={{
+            border: "1px solid #DFDFDF",
+          }}
+        >
+          <Input
+            placeholder="Search Banks"
+            style={{
+              borderColor: "#DFDFDF",
+              padding: "8px 12px",
+              marginBottom: "1rem",
+            }}
+          />
+          <h3>Frequently Used Banks</h3>
+          <div
+            style={{
+              padding: "12px",
+              border: "1px solid #dfdfdf",
+              borderRadius: "6px",
+              marginTop: "0.75rem",
+              display: "flex",
+              alignItems: "center",
+            }}
+          >
+            <img src={hdfc} width={"40px"} style={{ marginRight: "0.5rem" }} />
+            <Text style={{ fontSize: "16px", fontWeight: "600" }}>HDFC</Text>
+          </div>
+          <div
+            style={{
+              padding: "12px",
+              border: "1px solid #dfdfdf",
+              borderRadius: "6px",
+              marginTop: "0.75rem",
+              display: "flex",
+              alignItems: "center",
+            }}
+          >
+            <img src={sbi} width={"40px"} style={{ marginRight: "0.5rem" }} />
+            <Text style={{ fontSize: "16px", fontWeight: "600" }}>
+              State Bank Of India
+            </Text>
+            <Checkbox
+              onChange={setDefaultBank}
+              style={{ float: "right", width: "auto", margin: "0 0 0 auto" }}
+            >
+              Mark as Default
+            </Checkbox>
+          </div>
+        </Card>
+      )},
     {
       label: <div>{walletSVG} Cash On Delivery</div>,
       content: "",
@@ -562,10 +612,10 @@ const ShoppingCart: React.FC = () => {
 
   return (
     <div
-      className={pageName === "shopping-cart" ? "shopping-cart" : "checkout"}
+      className={pageName === "shopping-cart" ? "shopping-cart" : (pageName === "checkout" ? "checkout" : "payments")}
     >
       <Title level={2} className="page-heading">
-        {pageName === "shopping-cart" ? "Shopping Cart" : "Checkout"}
+      {pageName === "shopping-cart" ? "Shopping Cart" : (pageName === "checkout" ? "Checkout" : "Payments")}
       </Title>
       {pageName === "shopping-cart" ? (
         <Text>
@@ -588,21 +638,23 @@ const ShoppingCart: React.FC = () => {
               bordered={false}
               style={{ backgroundColor: "#fff", borderRadius: "8px" }}
             />
-          ) : (
-            <Tabs
-              defaultActiveKey="1"
-              tabPosition={tabPosition}
-              style={{ height: "auto" }}
-              items={tabsMenu.map((e, i) => {
-                const id = String(i);
-                return {
-                  label: e.label,
-                  key: id,
-                  disabled: e.disabled,
-                  children: e.content,
-                };
-              })}
-            />
+          ) : (pageName === "checkout" ? 
+            <DeliveryOptions /> : (
+              <Tabs
+                defaultActiveKey="1"
+                tabPosition={tabPosition}
+                style={{ height: "auto" }}
+                items={tabsMenu.map((e, i) => {
+                  const id = String(i);
+                  return {
+                    label: e.label,
+                    key: id,
+                    disabled: e.disabled,
+                    children: e.content,
+                  };
+                })}
+              />
+            )
           )}
         </Col>
         <Col
@@ -615,7 +667,7 @@ const ShoppingCart: React.FC = () => {
             subtotal={subtotal}
             savings={savings}
             tax={tax}
-            pageName={pageName === "shopping-cart"}
+            pageName={pageName}
           />
         </Col>
       </Row>

@@ -7,9 +7,11 @@ interface CartProps {
   subtotal: number;
   savings: number;
   tax: number;
-  pageName: boolean;
+  pageName: string;
 }
 const { Title, Text } = Typography;
+
+
 
 const Cart: React.FC<CartProps> = ({
   totalItems,
@@ -18,7 +20,8 @@ const Cart: React.FC<CartProps> = ({
   tax,
   pageName,
 }) => {
-  const dynamicLink = pageName ? "/checkout" : "/shopping-cart";
+  const dynamicLink = (pageName === 'shopping-cart' ? '/checkout' : (pageName === 'checkout' ? "/payments" : ''));
+  console.log(dynamicLink, "dynamicLink");
   return (
     <>
       <Card
@@ -70,7 +73,7 @@ const Cart: React.FC<CartProps> = ({
           <Button
             className="primary-button primary-background text-white"
             block
-            disabled={!pageName}
+            disabled={pageName === 'payments'}
           >
             Proceed to checkout {" > "}
           </Button>

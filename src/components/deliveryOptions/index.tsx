@@ -6,6 +6,7 @@ const { Title, Text } = Typography;
 
 const AddressSelection = () => {
     const [selectedAddress, setSelectedAddress] = useState(1);
+    const [selectedTime, setSelectedTime] = useState(null); // Add state for selectedTime
     const addresses = [
         {
             id: 1,
@@ -29,8 +30,7 @@ const AddressSelection = () => {
 
     const handleChange = (e) => {
         setSelectedAddress(e.target.value);
-    };
-    const [selectedTime, setSelectedTime] = useState<string | null>(null);
+    }; 
 
 
     const timeSlots = [
@@ -40,8 +40,7 @@ const AddressSelection = () => {
     ];
 
     return (
-        <div className="main-container-fluid section-spacing_top section-spacing_bottom checkout-layout">
-            <Title level={2} className="page-heading">Checkout</Title>
+        <div className="checkout-layout">
             <Card className="card-shadow card-spacing">
                 <Title level={4} className="page-heading_border">Select Address</Title>
                 <Radio.Group onChange={handleChange} value={selectedAddress}>

@@ -7,19 +7,18 @@
   position: sticky;
   top: 0;
   z-index: 3;
+  transition: 0.4s ease all;
 }
 .header.scrolled {
   background-color: white; 
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
   color: black; 
 }
-.logo-scrolled {
-  filter: invert(1); 
-}
 .logo {
-    width: 28%;
+    width: 100%;
     height: 100%;
     display: flex;
+    position: relative;
 }
 .navbar-menu {
   width: 44%;
@@ -56,7 +55,6 @@
     background: transparent;
 }
 .right-navbar-menu {
-  width: 28%;
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -79,9 +77,9 @@
 .navbar-menu .ant-menu-item:hover {
   color: #1c1c1c; 
 }
-.header.scrolled img{
+/* .header.scrolled img{
   filter: invert(1)
-}
+} */
 .header.scrolled .custom-icon svg path {
   fill: #000;
 }
@@ -163,4 +161,99 @@
 .right-navbar-menu .icon-scrolled svg {
   color: black; 
   fill: #000;
+}
+img.logo-scrolled {
+  opacity: 0;
+}
+img.logo-scrolled.blue {
+  opacity: 1;
+}
+img.blue {
+  position: absolute;
+  left: 0;
+  opacity: 0;
+  transition: 0.4s ease all;
+}
+.header.scrolled .ant-menu-item-selected:after, .header.scrolled .ant-menu-item-active:after {
+  border-bottom-color: #006AD0 !important;
+}
+.right-navbar-menu  svg {
+  width: 18px;
+  height: 18px;
+}
+.mobile-menu-button {
+  display: none;
+}
+.hamburger_box{
+  display: none;
+}
+.mobile_icons{
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .mobile-menu-button {
+    display: block;
+  }
+  .navbar-menu {
+    display: none;
+  }
+  .right-navbar-menu {
+    display: none;
+  }
+  .logo img {
+    width: 150px;
+  }
+  .navbar-menu {
+    display: none !important;
+  }
+  .custom_drawer span.ant-menu-title-content a {
+    color: #000 !important;
+    font-weight: 700;
+  }
+  .custom_drawer .ant-menu-light .ant-menu-item-selected{
+    background-color: #006AD0;
+  }
+  .custom_drawer .ant-menu-item:hover{
+    background-color: #006AD0 !important;
+  }
+  .custom_drawer  .ant-menu-item-selected span.ant-menu-title-content a{
+    color: #fff !important;
+  }
+  .custom_drawer .ant-menu-item:hover span.ant-menu-title-content a{
+    color: #fff !important;
+    fill: #fff !important;
+  }
+  .mobile_icons .custom-icon {
+    align-items: center;
+    justify-content: center;
+    border: none !important;
+    background-color: transparent;
+  }
+  .mobile_icons .custom-icon svg{
+    /* fill: #000; */
+    width: 20px;
+    height: 20px;
+  }
+  .mobile_icons .custom-icon .ant-menu-item:hover {
+    background-color: transparent !important;
+  }
+  .mobile_icons .custom-icon .ant-menu-item-selected{
+    background-color: transparent !important;
+  }
+  .header_left {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+  .hamburger_box {
+    display: block;
+  }
+  .logo{
+    width: auto !important;
+  }
+  .mobile_icons{
+    display: block;
+  }
 }

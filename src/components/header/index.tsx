@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { Layout, Menu, Avatar, Button, Dropdown, Input, Space, Form, Row, Col } from "antd";
+import { Layout, Menu, Avatar, Button, Dropdown, Input, Space, Form, Row, Col, Drawer } from "antd";
 import { Link, useNavigate, useLocation } from "react-router-dom";
-import { SearchOutlined, UserOutlined, ShoppingCartOutlined, CloseOutlined } from "@ant-design/icons";
+import { SearchOutlined, UserOutlined, ShoppingCartOutlined, CloseOutlined, MenuOutlined } from "@ant-design/icons";
 import type { MenuProps } from "antd";
 import logo from "../../images/DAGLogo.png";
+import logoBlue from "../../images/logo_blue.png";
 import dropdownOverlay from "../../images/dropdown-overlay.png";
 import Scanner from "../../images/scanner.svg";
 import "./style.css";
@@ -46,6 +47,7 @@ const Index: React.FC = () => {
     setRightMenu(e.key)
   }
   const [dropdownVisible, setDropdownVisible] = useState(false);
+  const [drawerVisible, setDrawerVisible] = useState(false); // For mobile drawer
   const [isScrolled, setIsScrolled] = useState(false); 
   const navigate = useNavigate();
   const location = useLocation(); 
@@ -108,9 +110,34 @@ const Index: React.FC = () => {
 
   return (
     <Header className={`header ${isScrolled ? "scrolled" : ""} ${isHomePage ? "" : "scrolled"}`}>
-      <div className="logo">
-        <img src={logo} alt="DAG Logo" className={isScrolled ? "logo-scrolled" : ""} />
+      <div className="header_left">
+      <div className="hamburger_box">
+            <Button
+            className="mobile-menu-button"
+            icon={<MenuOutlined />}
+            onClick={() => setDrawerVisible(true)}
+          />
+          <Drawer
+            title="Menu"
+            placement="left"
+            onClose={() => setDrawerVisible(false)}
+            visible={drawerVisible}
+            className="custom_drawer"
+          >
+            <Menu onClick={onMenuClick} selectedKeys={[mainMenu]} mode="vertical" items={items} />
+            
+          </Drawer>
+
+        </div>
+        <div className="logo">
+          <img src={logo} alt="DAG Logo" className={isScrolled ? "logo-scrolled" : ""} />
+          <img src={logoBlue} alt="DAG Logo" className={isScrolled ? "logo-scrolled blue" : " blue"} />
+        </div>
+        <div className="mobile_icons">
+          <Menu onClick={onRightMenuClick}  className={isScrolled ? "icon-scrolled" : "custom-icon"} selectedKeys={[rightMenu]} mode="horizontal" items={rightMenuItems}/>
+        </div>
       </div>
+     
       <Menu onClick={onMenuClick} selectedKeys={[mainMenu]} mode="horizontal" items={items} className="navbar-menu" />
       <div className="right-navbar-menu">
         <Dropdown
@@ -126,6 +153,9 @@ const Index: React.FC = () => {
         </Dropdown>
         <Menu onClick={onRightMenuClick} className={isScrolled ? "icon-scrolled" : "custom-icon"} selectedKeys={[rightMenu]} mode="horizontal" items={rightMenuItems} />
       </div>
+      
+      {/* <Menu onClick={onRightMenuClick} className={isScrolled ? "icon-scrolled" : "custom-icon"} selectedKeys={[rightMenu]} mode="horizontal" items={rightMenuItems} /> */}
+
     </Header>
   );
 };

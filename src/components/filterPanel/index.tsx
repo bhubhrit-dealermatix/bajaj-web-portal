@@ -3,24 +3,24 @@ import { Flex, Layout, Card, Tag } from "antd";
 import type { RadioChangeEvent } from "antd";
 import { Button, Radio, Space, Checkbox, Col, Row, Slider } from "antd";
 import type { GetProp } from "antd";
-import image from '../../images/product_image.png';
+import image from "../../images/product_image.png";
 import ProductCard from "../productCard";
 import "./style.css";
 
 const { Sider, Content } = Layout;
 
 interface FeaturedProduct {
-    itemId: string;  
-    itemName: string;
-    itemImage: string;
-    itemQuantity: number;
-    itemMRP: number;
-    itemMPP: number;
-    inStock: boolean;
-    description: string;
-    rating: number;      
-    ratingCount: number;
-    itemCode: string;
+  itemId: string;
+  itemName: string;
+  itemImage: string;
+  itemQuantity: number;
+  itemMRP: number;
+  itemMPP: number;
+  inStock: boolean;
+  description: string;
+  rating: number;
+  ratingCount: number;
+  itemCode: string;
 }
 
 // const headerStyle: React.CSSProperties = {
@@ -49,110 +49,118 @@ const cardStyle = {
 };
 
 const featuredProducts: FeaturedProduct[] = [
-    {
-        itemId: "1",
-        itemName: "CrankCase LH",
-        itemImage: `${image}`,
-        itemQuantity: 100,
-        itemMRP: 45,
-        itemMPP: 40,
-        inStock: true,
-        description: "Crankcase LH refers to the left-hand side component of an engine's crankcase, housing the crankshaft assembly. It supports lubrication and contributes to the engine's overall functionality and performance.",
-        rating: 4,    
-        ratingCount: 126,
-        itemCode:"CLH01",
-    },
-    {
-        itemId: "2",
-        itemName: "CrankCase LH",
-        itemImage: `${image}`,
-        itemQuantity: 100,
-        itemMRP: 45,
-        itemMPP: 40,
-        inStock: true,
-        description: "Crankcase LH refers to the left-hand side component of an engine's crankcase, housing the crankshaft assembly. It supports lubrication and contributes to the engine's overall functionality and performance.",
-        rating: 3,    
-        ratingCount: 100,
-        itemCode:"CLH01",
-    },
-    {
-        itemId: "3",
-        itemName: "CrankCase LH",
-        itemImage: `${image}`,
-        itemQuantity: 100,
-        itemMRP: 45,
-        itemMPP: 40,
-        inStock: true,
-        description: "Crankcase LH refers to the left-hand side component of an engine's crankcase, housing the crankshaft assembly. It supports lubrication and contributes to the engine's overall functionality and performance.",
-        rating: 3.5,    
-        ratingCount: 256,
-        itemCode:"CLH01",
-    },
-    {
-        itemId: "4",
-        itemName: "CrankCase LH",
-        itemImage: `${image}`,
-        itemQuantity: 100,
-        itemMRP: 45,
-        itemMPP: 40,
-        inStock: true,
-        description: "Crankcase LH refers to the left-hand side component of an engine's crankcase, housing the crankshaft assembly. It supports lubrication and contributes to the engine's overall functionality and performance.",
-        rating: 4,    
-        ratingCount: 300,
-        itemCode:"CLH01",
-    },
-    {
-        itemId: "5",
-        itemName: "CrankCase LH",
-        itemImage: `${image}`,
-        itemQuantity: 100,
-        itemMRP: 45,
-        itemMPP: 40,
-        inStock: true,
-        description: "Crankcase LH refers to the left-hand side component of an engine's crankcase, housing the crankshaft assembly. It supports lubrication and contributes to the engine's overall functionality and performance.",
-        rating: 4,    
-        ratingCount: 300,
-        itemCode:"CLH01",
-    },
-    {
-        itemId: "6",
-        itemName: "CrankCase LH",
-        itemImage: `${image}`,
-        itemQuantity: 100,
-        itemMRP: 45,
-        itemMPP: 40,
-        inStock: true,
-        description: "Crankcase LH refers to the left-hand side component of an engine's crankcase, housing the crankshaft assembly. It supports lubrication and contributes to the engine's overall functionality and performance.",
-        rating: 4,    
-        ratingCount: 300,
-        itemCode:"CLH01",
-    },
-    {
-        itemId: "7",
-        itemName: "CrankCase LH",
-        itemImage: `${image}`,
-        itemQuantity: 100,
-        itemMRP: 45,
-        itemMPP: 40,
-        inStock: true,
-        description: "Crankcase LH refers to the left-hand side component of an engine's crankcase, housing the crankshaft assembly. It supports lubrication and contributes to the engine's overall functionality and performance.",
-        rating: 4,    
-        ratingCount: 300,
-        itemCode:"CLH01",
-    },
-    {
-        itemId: "8",
-        itemName: "CrankCase LH",
-        itemImage: `${image}`,
-        itemQuantity: 100,
-        itemMRP: 45,
-        itemMPP: 40,
-        inStock: true,
-        description: "Crankcase LH refers to the left-hand side component of an engine's crankcase, housing the crankshaft assembly. It supports lubrication and contributes to the engine's overall functionality and performance.",
-        rating: 4,    
-        ratingCount: 300,
-        itemCode:"CLH01",
-    },
+  {
+    itemId: "1",
+    itemName: "CrankCase LH",
+    itemImage: `${image}`,
+    itemQuantity: 100,
+    itemMRP: 45,
+    itemMPP: 40,
+    inStock: true,
+    description:
+      "Crankcase LH refers to the left-hand side component of an engine's crankcase, housing the crankshaft assembly. It supports lubrication and contributes to the engine's overall functionality and performance.",
+    rating: 4,
+    ratingCount: 126,
+    itemCode: "CLH01",
+  },
+  {
+    itemId: "2",
+    itemName: "CrankCase LH",
+    itemImage: `${image}`,
+    itemQuantity: 100,
+    itemMRP: 45,
+    itemMPP: 40,
+    inStock: true,
+    description:
+      "Crankcase LH refers to the left-hand side component of an engine's crankcase, housing the crankshaft assembly. It supports lubrication and contributes to the engine's overall functionality and performance.",
+    rating: 3,
+    ratingCount: 100,
+    itemCode: "CLH01",
+  },
+  {
+    itemId: "3",
+    itemName: "CrankCase LH",
+    itemImage: `${image}`,
+    itemQuantity: 100,
+    itemMRP: 45,
+    itemMPP: 40,
+    inStock: true,
+    description:
+      "Crankcase LH refers to the left-hand side component of an engine's crankcase, housing the crankshaft assembly. It supports lubrication and contributes to the engine's overall functionality and performance.",
+    rating: 3.5,
+    ratingCount: 256,
+    itemCode: "CLH01",
+  },
+  {
+    itemId: "4",
+    itemName: "CrankCase LH",
+    itemImage: `${image}`,
+    itemQuantity: 100,
+    itemMRP: 45,
+    itemMPP: 40,
+    inStock: true,
+    description:
+      "Crankcase LH refers to the left-hand side component of an engine's crankcase, housing the crankshaft assembly. It supports lubrication and contributes to the engine's overall functionality and performance.",
+    rating: 4,
+    ratingCount: 300,
+    itemCode: "CLH01",
+  },
+  {
+    itemId: "5",
+    itemName: "CrankCase LH",
+    itemImage: `${image}`,
+    itemQuantity: 100,
+    itemMRP: 45,
+    itemMPP: 40,
+    inStock: true,
+    description:
+      "Crankcase LH refers to the left-hand side component of an engine's crankcase, housing the crankshaft assembly. It supports lubrication and contributes to the engine's overall functionality and performance.",
+    rating: 4,
+    ratingCount: 300,
+    itemCode: "CLH01",
+  },
+  {
+    itemId: "6",
+    itemName: "CrankCase LH",
+    itemImage: `${image}`,
+    itemQuantity: 100,
+    itemMRP: 45,
+    itemMPP: 40,
+    inStock: true,
+    description:
+      "Crankcase LH refers to the left-hand side component of an engine's crankcase, housing the crankshaft assembly. It supports lubrication and contributes to the engine's overall functionality and performance.",
+    rating: 4,
+    ratingCount: 300,
+    itemCode: "CLH01",
+  },
+  {
+    itemId: "7",
+    itemName: "CrankCase LH",
+    itemImage: `${image}`,
+    itemQuantity: 100,
+    itemMRP: 45,
+    itemMPP: 40,
+    inStock: true,
+    description:
+      "Crankcase LH refers to the left-hand side component of an engine's crankcase, housing the crankshaft assembly. It supports lubrication and contributes to the engine's overall functionality and performance.",
+    rating: 4,
+    ratingCount: 300,
+    itemCode: "CLH01",
+  },
+  {
+    itemId: "8",
+    itemName: "CrankCase LH",
+    itemImage: `${image}`,
+    itemQuantity: 100,
+    itemMRP: 45,
+    itemMPP: 40,
+    inStock: true,
+    description:
+      "Crankcase LH refers to the left-hand side component of an engine's crankcase, housing the crankshaft assembly. It supports lubrication and contributes to the engine's overall functionality and performance.",
+    rating: 4,
+    ratingCount: 300,
+    itemCode: "CLH01",
+  },
 ];
 
 const tagsData = ["% Sale", "Same Day Delivery", "Available to Order"];
@@ -175,12 +183,15 @@ const App: React.FC = () => {
 
   function showMoreModels() {
     const modelsList = document.getElementById("show-models-list");
-    if (modelsList != null ) {
-        if ( modelsList.style.display === "none" || modelsList.style.display === "" ) {
-            modelsList.style.display = "block";
-        } else {
+    if (modelsList != null) {
+      if (
+        modelsList.style.display === "none" ||
+        modelsList.style.display === ""
+      ) {
+        modelsList.style.display = "block";
+      } else {
         modelsList.style.display = "none";
-        }
+      }
     }
   }
 
@@ -209,7 +220,12 @@ const App: React.FC = () => {
         {/* <div style={headerStyle}>Header</div> */}
         <Layout>
           <Sider width="25%" style={siderStyle}>
-            <Card size="small" title="Status" className="status-card" style={cardStyle} >
+            <Card
+              size="small"
+              title="Status"
+              className="status-card"
+              style={cardStyle}
+            >
               {tagsData.map<React.ReactNode>((tag) => (
                 <Tag.CheckableTag
                   key={tag}
@@ -220,10 +236,20 @@ const App: React.FC = () => {
                 </Tag.CheckableTag>
               ))}
             </Card>
-            <Card size="small" title="Price" className="models-card" style={cardStyle} >
-                <Slider range defaultValue={[340, 1250]} min={200} max={3000}/>
+            <Card
+              size="small"
+              title="Price"
+              className="models-card"
+              style={cardStyle}
+            >
+              <Slider range defaultValue={[340, 1250]} min={200} max={3000} />
             </Card>
-            <Card size="small" title="Models" className="models-card" style={cardStyle} >
+            <Card
+              size="small"
+              title="Models"
+              className="models-card"
+              style={cardStyle}
+            >
               <Radio.Group onChange={onModelChange} value={modelValue}>
                 <Space direction="vertical">
                   <Radio value={"Boxer Model BM 150cc"}>
@@ -256,8 +282,16 @@ const App: React.FC = () => {
                 </Space>
               </Radio.Group>
             </Card>
-            <Card size="small" title="Brand" className="brand-card" style={cardStyle} >
-              <Checkbox.Group style={{ width: "100%" }} onChange={onBrandChange} >
+            <Card
+              size="small"
+              title="Brand"
+              className="brand-card"
+              style={cardStyle}
+            >
+              <Checkbox.Group
+                style={{ width: "100%" }}
+                onChange={onBrandChange}
+              >
                 <Row style={{ rowGap: "8px" }}>
                   <Col span={24}>
                     <Checkbox value="" checked={checked}>
@@ -292,8 +326,16 @@ const App: React.FC = () => {
                 </Row>
               </Checkbox.Group>
             </Card>
-            <Card size="small" title="Item Family" className="item-family-card" style={cardStyle} >
-              <Checkbox.Group style={{ width: "100%" }} onChange={onFamilyChange} >
+            <Card
+              size="small"
+              title="Item Family"
+              className="item-family-card"
+              style={cardStyle}
+            >
+              <Checkbox.Group
+                style={{ width: "100%" }}
+                onChange={onFamilyChange}
+              >
                 <Row style={{ rowGap: "8px" }}>
                   <Col span={24}>
                     <Checkbox value="" checked>
@@ -318,29 +360,55 @@ const App: React.FC = () => {
                 </Row>
               </Checkbox.Group>
             </Card>
-            <Card size="small" title="Item Segment" className="item-segment-card" style={cardStyle} >
-              <Checkbox.Group style={{ width: "100%" }} onChange={onSegmentChange} >
+            <Card
+              size="small"
+              title="Item Segment"
+              className="item-segment-card"
+              style={cardStyle}
+            >
+              <Checkbox.Group
+                style={{ width: "100%" }}
+                onChange={onSegmentChange}
+              >
                 <Row style={{ rowGap: "8px" }}>
                   <Col span={24}>
-                    <Checkbox value="" checked>None</Checkbox>
+                    <Checkbox value="" checked>
+                      None
+                    </Checkbox>
                   </Col>
                   <Col span={24}>
-                    <Checkbox value="Cummins Maintainance Tool Kit">Cummins Maintainance Tool Kit</Checkbox>
+                    <Checkbox value="Cummins Maintainance Tool Kit">
+                      Cummins Maintainance Tool Kit
+                    </Checkbox>
                   </Col>
                   <Col span={24}>
-                    <Checkbox value="Onam Maintainance Tool Kit">Onam Maintainance Tool Kit</Checkbox>
+                    <Checkbox value="Onam Maintainance Tool Kit">
+                      Onam Maintainance Tool Kit
+                    </Checkbox>
                   </Col>
                   <Col span={24}>
-                    <Checkbox value="Valvoline Maintainance Tool Kit">Valvoline Maintainance Tool Kit</Checkbox>
+                    <Checkbox value="Valvoline Maintainance Tool Kit">
+                      Valvoline Maintainance Tool Kit
+                    </Checkbox>
                   </Col>
                 </Row>
               </Checkbox.Group>
             </Card>
-            <Card size="small" title="Item Signature" className="item-signature-card" style={cardStyle} >
-              <Checkbox.Group style={{ width: "100%" }} onChange={onSegmentChange} >
+            <Card
+              size="small"
+              title="Item Signature"
+              className="item-signature-card"
+              style={cardStyle}
+            >
+              <Checkbox.Group
+                style={{ width: "100%" }}
+                onChange={onSegmentChange}
+              >
                 <Row style={{ rowGap: "8px" }}>
                   <Col span={24}>
-                    <Checkbox value="" checked>None</Checkbox>
+                    <Checkbox value="" checked>
+                      None
+                    </Checkbox>
                   </Col>
                   <Col span={24}>
                     <Checkbox value="Cummins">Cummins</Checkbox>
@@ -351,13 +419,18 @@ const App: React.FC = () => {
           </Sider>
           <Content>
             <div className="padding-custom">
-                <Row gutter={16}>
-                    {featuredProducts.map((product) => (
-                        <Col span={8} key={product.itemId}>
-                            <ProductCard {...product} />
-                        </Col>
-                    ))}
-                </Row>
+              <Row gutter={16}>
+                {featuredProducts.map((product) => (
+                  <Col
+                    xs={{ flex: "100%" }}
+                    sm={{ flex: "50%" }}
+                    lg={{ flex: "calc(100%/3)" }}
+                    key={product.itemId}
+                  >
+                    <ProductCard {...product} />
+                  </Col>
+                ))}
+              </Row>
             </div>
           </Content>
         </Layout>

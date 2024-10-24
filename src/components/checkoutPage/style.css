@@ -1,0 +1,57 @@
+.checkout-layout>div>.ant-card-body{
+    padding:15px !important;
+}
+.page-heading_border{
+    border-bottom:1px solid #E0E5EB;
+    padding-bottom:10px;
+}
+.checkout-layout>div>.ant-card-body>.ant-radio-group{
+   width:100%;
+}
+.checkout-layout>div>.ant-card-body>.ant-radio-group>.ant-space{
+    width:100%;
+ }
+ .address-custom>.ant-space-item{
+    padding-bottom:7px;
+    width:100%;
+ }
+ .address-custom {
+    align-items: flex-start;
+}
+.underline-button {
+    text-decoration: underline;
+    color:#013564;
+}
+
+.address-custom {
+    width: 100%;
+    padding:10px;
+}
+.spacing-left{
+    padding-left:5px;
+}
+.ant-radio-checked .ant-radio-inner{
+    border-color: #013564 !important ;
+    background-color: #013564 !important;
+}
+.card-spacing{
+    margin-bottom:25px;
+}
+.button-custom-style{
+    margin-right:7px;
+    margin-bottom:10px;
+}
+.button-custom-style>.ant-btn{
+    border-radius: 17px;
+}
+.custom-styling{
+    display: flex;
+    justify-Content: space-between;
+     width: 100% ;
+}
+.custom-margin{
+    margin-bottom:12px;
+}
+.custom-font{
+    font-size: 13px;
+}

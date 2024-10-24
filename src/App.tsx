@@ -16,7 +16,7 @@ import "./App.css";
 import ProductDetailPage from './pages/Product-details';
 import OrderHistory from "./components/orderHistory";
 import ContactUs from "./pages/ContactUs";
-
+import AddressSelection from "./components/checkoutPage";
 
 const App = () => {
   return (
@@ -34,6 +34,7 @@ const App = () => {
               <Route path="/about-us" element={<About />} />
               <Route path="/shopping-cart" element={<Cart />} />
               <Route path="/checkout" element={<Checkout />} />
+              <Route path="/payment" element={<AddressSelection />} />
             </Routes>
           </Layout.Content>
           <MainFooter/>
